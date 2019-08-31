@@ -2,20 +2,14 @@ import React from "react";
 import HogCard from "./HogCard";
 
 class HogTiles extends React.Component {
+    
+    pork = () => (this.props.porks.map(pork => <HogCard key={pork.name} pork={pork} />));
 
     render() {
-
-        const pork = this.props.porks.map(porky => (
-
-            <HogCard pork ={porky} />
-            
-            )
-        );
-
         return (
             <div className="row">
                 <div className="ui four cards">
-                    {pork}
+                    {this.pork()}
                 </div>
             </div>
         );
